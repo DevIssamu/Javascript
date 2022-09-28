@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Eventos Dom</title>
+</head>
+<body>
+    <header class="container">
+            <h1 class="title"><a href="#">Java<span>Script</span></a></h1>
+            <H2 class="subtitle">Eventos Dom</H2>
+    </header>
+    <main>
+        <div class="box" id="box">
+            Interaja...
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvovido por Mário Issamu Yamada</p>
+    </footer>
+
+    <script>
+        let x = window.document.getElementById("box")
+        x.addEventListener('click', clicar)
+        x.addEventListener('mouseenter', entrar)
+        x.addEventListener('mouseout', saiu)
+
+        function clicar() {
+            x.innerText = "clicou"
+            x.style.backgroundColor = "#ffda06"
+        }
+        function entrar() {
+            x.innerText = "entrou"
+            x.style.backgroundColor = "#19b440"
+        }
+        function saiu() {
+            x.innerText = "saiu"
+            x.style.backgroundColor = "red"
+        }
+    </script>
+
+    
+</body>
+</html>

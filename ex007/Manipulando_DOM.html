@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(50, 55, 53);
+            color: white;
+            font:normal 12pt Arial;
+        }
+
+        header{
+            padding: 20px 0 20px 0;
+        }
+
+        spam{
+            color: rgb(190, 9, 9);
+        }
+
+
+        .container{
+            width: 60vw;
+            margin: 0 auto;
+        }
+
+        .caixa {
+            background-color: rgb(190, 9, 9);
+            padding: 3px 3px;
+            width: 120px;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .nivel1{
+            width: 400px;
+            text-align: center;
+        }
+        
+        .nivel2{
+            width: 400px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nivel3{
+            width: 400px;
+            text-align: center;
+        }
+
+        .nivel4{
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        footer{
+            font-size: 12px;
+            padding: 2px 0 2px 0;
+            margin: 0;
+            text-align: center;
+            
+        }
+
+    </style>
+
+    <title>DOM</title>
+</head>
+<body>
+
+    <header>
+        <H1>Manipulando <spam>DOM</spam></H1>
+    </header>
+
+    
+    <main>
+        <div class="container">
+            <h2>Seletores e como funcionam</h2>
+            <ul>
+                <li>Árvore Dom
+                    <div class="nivel1">
+                        <p class="caixa" >window</p>
+                    </div>
+                    <div class="nivel2">
+                        <p class="caixa" >location</p>
+                        <p class="caixa" >document</p>
+                        <p class="caixa" >history</p>
+                    </div>
+                    <div class="nivel3">
+                        <p class="caixa" >html</p>
+                    </div>
+                    <div class="nivel4">
+                        <p class="caixa" >head</p>
+                        <p class="caixa" >body</p>
+                    </div>
+                </li>
+                <p>Tudo no javascript está dentro da window e ai vai <br> seguindo o caminho até o objeto DOM que a gente<br> quer selecionar. </p>
+                <li>
+                    Métodos de acesso
+                    <ul>
+                        <li>por marca - getElementsByTagName</li>
+                        <li>por ID - getElementById</li>
+                        <li>por nome - getElementsByName</li>
+                        <li>por classe - getElementsByClassName</li>
+                        <li>por seletor - querySelector</li>
+                    </ul>
+                    <p>Exemplo: seleção de um parágrafo:<br>
+                       window.document.getElementsByTagName("p")[0]<br>
+                       window.document.getElementById("p")<br>
+                       e assim vai..<br><br>
+                       o único que não precisa o colchetes é o por ID<br>
+                       porque é o único que é um elemento único, os outros<br>
+                       como podem existir varios iguais na mesma página<br>
+                       é preciso indicar qual quer pegar, senão pega todos.
+                    </p>
+                </li>
+            </ul>
+            
+            <hr>
+            <p>Vou manipular a div abaixo com o Javascript</p>
+            <div class="msg">Clique em mim</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Mario Issamu Yamada</p>
+    </footer>
+
+
+
+<script>
+    var mensagem = document.getElementsByClassName('msg')[0]
+
+    mensagem.style.color = "green"
+    mensagem.innerText = 'Alterei a cor e o texto dessa div com o Javascript!'
+    
+</script>
+ 
+</body>
+</html>
+

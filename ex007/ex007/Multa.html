@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Multas</title>
+</head>
+<body>
+    <header><h1>Sistema de multas</h1></header>
+
+    <main>
+        <h2>Limite de velocidade 60km/h</h2>
+        <label for="">Velocidade do carro</label>
+        <input type="number" name="vel" id="vel">
+        <input id="botao" type="button" value="Calcular">
+        <div id="resultado"></div>
+    </main>
+
+
+    <script>
+        var botao = document.getElementById("botao")
+        botao.addEventListener("click",calcular)
+        
+        function calcular() {
+            var vel = Number(document.getElementById("vel").value)
+            var res = document.getElementById("resultado")
+            res.innerHTML = `<p>A velocidade do carro é ${vel}km/h</p>`
+            if(vel>60){
+                res.innerHTML+= `<p>Você está acima da velocidade permitida</p>`
+                res.innerHTML+= "<p>Você foi multado!</p> " 
+            }
+            else {
+                res.innerHTML += "<p>Faça uma boa viagem</p>"
+            }
+           
+            
+        }
+        
+    </script>
+    
+
+
+
+   
+    
+</body>
+</html>
